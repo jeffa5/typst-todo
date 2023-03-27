@@ -31,10 +31,9 @@
             let body_func = body.func()
             let text_slug = if body_func == text {
                 let text = body.at("text")
-                text.slice(0,calc.min(90,text.len()))
+                text.slice(0, calc.min(90,text.len()))
             } else {
-                // need some sort of content to string
-                "Unsupported content type, found " + [#repr(body_func)]
+                body.children.first()
             }
             [
                 #link(todo.location())[
