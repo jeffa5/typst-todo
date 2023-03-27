@@ -8,7 +8,7 @@
 
 #let itodo = todo.with(inline:true)
 
-#list_of_todos()
+#list_of_todos(numbers:"I:")
 
 = On some content
 
@@ -26,8 +26,11 @@
 
 #itodo(fill:blue)[an itodo]
 
-== But can't specify a note
+== And with some numbers
 
+#itodo(numbering: "1")[a numbered inline todo]
+
+== But can't specify a note
 
 ```typst
 #todo(inline: true, note: "test note")[broken] // error
