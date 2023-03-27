@@ -8,7 +8,7 @@ This demonstrates some useful commands for adding todo notes to typst documents.
 
 - [x] Inline todos
 - [ ] Margin todos
-- [ ] Numbered todos
+- [x] Numbered todos
 - [ ] List of todos
     - [x] collect todos in the document (with labels)
     - [ ] limit text length based on current line width

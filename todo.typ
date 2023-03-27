@@ -1,13 +1,14 @@
+#let todo_counter = counter("todos")
+
 #let todo(inline: false, fill: orange, note: "", numbering: none, content) = {
-    let count = counter("todos")
-    let count_display = if numbering != none { count.display(numbering) }
+    let count_display = if numbering != none { todo_counter.display(numbering) }
     if inline {
         assert(note.len() == 0, message: "inline notes cannot have separate note text")
         [#box(rect(width:100%, fill:fill, radius:4pt, stroke:1pt, [#count_display #content])) <todos>]
     } else {
         [#box(rect(fill:fill, radius:4pt, stroke:1pt, [#count_display #note])) <todos> #content]
     }
-    count.step()
+    todo_counter.step()
 }
 
 #let missing_figure(content, fill: gray, stroke: none) = {
@@ -22,7 +23,7 @@
 
         for todo in todos {
             let location = todo.location()
-            let todo_counter = counter("todos").at(location)
+            let todo_counter = todo_counter.at(location)
             let counter_display = if numbers != none { numbering(numbers, ..todo_counter) }
             let page = counter(page).at(todo.location())
             let body = todo.body.body
