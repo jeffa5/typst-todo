@@ -10,30 +10,30 @@
 
 #list_of_todos()
 
-== On some content
+= On some content
 
 #todo[Add some content]
 
-=== Todo with note text
+== Todo with note text
 
 #todo(note: [test])[some text that needs fixing]
 
-== Inline
+= Inline
 
 #todo(inline: true)[Add some content]
 
-=== Using a shortcut, and with colour
+== Using a shortcut, and with colour
 
 #itodo(fill:blue)[an itodo]
 
-=== But can't specify a note
+== But can't specify a note
 
 
 ```typst
 #todo(inline: true, note: "test note")[broken] // error
 ```
 
-=== A very long todo, only the first line is shown in the list_of_todos
+== A very long todo, only the first line is shown in the list_of_todos
 
 #itodo[#lorem(50)]
 
@@ -41,7 +41,7 @@
 
 #lorem(50)]
 
-== Todo figures too
+= Todo figures too
 
 #missing_figure[my pretty graph]
 
