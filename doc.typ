@@ -45,7 +45,3 @@
 
 #missing_figure[my pretty graph]
 
-#pagebreak()
-
-#itodo[new page]
-
