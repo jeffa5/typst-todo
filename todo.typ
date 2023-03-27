@@ -26,7 +26,7 @@
             let todo_counter = todo_counter.at(location)
             let counter_display = if numbers != none { numbering(numbers, ..todo_counter) }
             let page = counter(page).at(todo.location())
-            let body = todo.body.body
+            let body = todo.body.body.children.last()
             let body_func = body.func()
             let text_slug = if body_func == text {
                 let text = body.at("text")
