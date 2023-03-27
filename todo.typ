@@ -1,12 +1,13 @@
 #let todo_counter = counter("todos")
 
-#let todo(content, inline: false, fill: orange, note: "", numbering: none, border_radius: 4pt, border_stroke: 1pt, inline_width:100%, line_stroke: orange + 0.1em) = {
+#let todo(content, inline: false, fill: orange, note: "", numbering: none, border_radius: 4pt, border_stroke: 1pt, inline_width:100%, line_stroke: orange + 0.1em, underline_content: true) = {
     let count_display = if numbering != none { todo_counter.display(numbering) }
     if inline {
         assert(note.len() == 0, message: "inline notes cannot have separate note text")
         [#box(rect(width:inline_width, fill:fill, radius:border_radius, stroke:border_stroke, [#count_display #content])) <todos>]
     } else {
-        [#box(rect(fill:fill, radius:border_radius, stroke:border_stroke, [#count_display #note])) <todos> #underline(stroke: line_stroke, evade:false, content)]
+    let content = if underline_content {underline(stroke:line_stroke, evade: false, content)}else{content}
+        [#box(rect(fill:fill, radius:border_radius, stroke:border_stroke, [#count_display #note])) <todos> #content]
     }
     todo_counter.step()
 }
