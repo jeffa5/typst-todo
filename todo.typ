@@ -7,14 +7,12 @@
     }
 }
 
-#let itodo = todo.with(inline:true)
-
 #let missing_figure(content, fill: gray, stroke: none) = {
     rect(width: 100%, fill: fill, stroke: stroke, [*Missing Figure*: #content])
 }
 
 #let list_of_todos(title: "List of Todos", outlined: true) = {
-    heading(title, outlined: outlined)
+    heading(title, numbering: none, outlined: outlined)
 
     locate(loc => {
         let todos = query(<todos>, loc)
@@ -28,7 +26,7 @@
                 text.slice(0,calc.min(90,text.len()))
             } else {
                 // need some sort of content to string
-                "Unsupported content type"
+                "Unsupported content type, found " + [#repr(body_func)]
             }
             [
                 #link(todo.location())[

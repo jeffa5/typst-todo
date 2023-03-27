@@ -1,9 +1,8 @@
-#heading([Typst Todo], outlined: false)
-
+#align(center, heading([Typst Todo], outlined: false))
 
 #set heading(numbering: "1.")
 
-#outline(indent:true)
+#outline(indent: true)
 
 #import "todo.typ": todo, missing_figure, list_of_todos
 
