@@ -1,18 +1,18 @@
 #let todo_counter = counter("todos")
 
-#let todo(inline: false, fill: orange, note: "", numbering: none, content) = {
+#let todo(content, inline: false, fill: orange, note: "", numbering: none, radius: 4pt, stroke: 1pt, inline_width:100%) = {
     let count_display = if numbering != none { todo_counter.display(numbering) }
     if inline {
         assert(note.len() == 0, message: "inline notes cannot have separate note text")
-        [#box(rect(width:100%, fill:fill, radius:4pt, stroke:1pt, [#count_display #content])) <todos>]
+        [#box(rect(width:inline_width, fill:fill, radius:radius, stroke:stroke, [#count_display #content])) <todos>]
     } else {
-        [#box(rect(fill:fill, radius:4pt, stroke:1pt, [#count_display #note])) <todos> #content]
+        [#box(rect(fill:fill, radius:radius, stroke:stroke, [#count_display #note])) <todos> #content]
     }
     todo_counter.step()
 }
 
-#let missing_figure(content, fill: gray, stroke: none) = {
-    rect(width: 100%, fill: fill, stroke: stroke, [*Missing Figure*: #content])
+#let missing_figure(content, width: 100%, fill: gray, stroke: none, prefix: [*Missing Figure*:]) = {
+    rect(width: width, fill: fill, stroke: stroke, [#prefix #content])
 }
 
 #let list_of_todos(title: "List of Todos", outlined: true, numbers: none) = {
