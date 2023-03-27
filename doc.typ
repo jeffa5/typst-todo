@@ -18,6 +18,8 @@
 
 #todo(note: [test])[some text that needs fixing]
 
+#todo(note: [bad header])[#heading([todonotes are ok, I guess], level:2)]
+
 = Inline
 
 #todo(inline: true)[Add some content]
