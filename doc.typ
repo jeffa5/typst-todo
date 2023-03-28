@@ -20,6 +20,17 @@
 
 #todo(note: [bad header])[#heading([todonotes are ok, I guess], level:2)]
 
+== Works with columns too
+
+#box(height:5em)[
+#columns(2)[
+  #lorem(10)
+  #todo(note: [left column])[this text is in the left column]
+  #lorem(10)
+  #todo(note: [right column])[this text is in the right column]
+  #lorem(10)
+]]
+
 = Inline
 
 #todo(inline: true)[Add some content]
