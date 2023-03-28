@@ -8,7 +8,7 @@
 
 #let itodo = todo.with(inline:true)
 
-#list_of_todos(numbers:"I:")
+#list_of_todos(numbers:"1:")
 
 = On some content
 
