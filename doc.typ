@@ -8,7 +8,7 @@
 
 #let itodo = todo.with(inline:true)
 
-#list_of_todos(numbers:"1:")
+#list_of_todos(numbers:"1.1:")
 
 = On some content
 
@@ -41,7 +41,7 @@
 
 == And with some numbers
 
-#itodo(numbering: "1")[a numbered inline todo]
+#itodo(numbers: "1.1")[a numbered inline todo]
 
 == But can't specify a note
 
@@ -51,9 +51,9 @@
 
 == A very long todo, only the first line is shown in the list_of_todos
 
-#itodo[#lorem(50)]
+#itodo(numbers: "1.1")[#lorem(50)]
 
-#itodo[Something big is coming
+#itodo(numbers: "1.1")[Something big is coming
 
 #lorem(50)]
 
